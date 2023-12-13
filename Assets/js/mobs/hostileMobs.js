@@ -42,5 +42,7 @@ class HostileMobs {
     mobImageElement.alt = this._name;
 
     const mobFigcaptionElement = document.createElement("figcaption");
+
+    //Helper function to create p elements??
   }
 }
