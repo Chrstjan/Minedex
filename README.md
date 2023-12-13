@@ -1,2 +1,2 @@
-# Html-Boilerplate
-A Html Boilerplate
+# Minedex
+A Pokedex like project made with JavaScript
