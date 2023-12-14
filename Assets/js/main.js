@@ -22,4 +22,3 @@ const AdultZombie = new HostileMobs(
 AdultZombie.displayMobDetails(document.getElementById("main-section"));
   
 //Skeleton
-  
