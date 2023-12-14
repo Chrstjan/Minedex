@@ -32,7 +32,7 @@ class HostileMobs {
     this._xp = exp;
   }
 
-  static baseUrl = "../Assets/images/hostileMobs/"
+  static baseUrl = "./Assets/images/Mobs/HostileMobs/"
 
   _createParagraph = (property, value) => {
     const pElement = document.createElement("p");
