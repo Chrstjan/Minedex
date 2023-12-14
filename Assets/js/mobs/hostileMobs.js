@@ -42,6 +42,7 @@ class HostileMobs {
 
   displayMobDetails(targetElement) {
     const mobFigureElement = document.createElement("figure");
+    mobFigureElement.classList.add("hostile-mob");
 
     const mobHeaderElement = document.createElement("header");
     const mobNameElement = document.createElement("h2");
@@ -56,7 +57,7 @@ class HostileMobs {
 
     //Using the helper function
     mobFigcaptionElement.appendChild(this._createParagraph("Health", this._hp));
-    mobFigcaptionElement.appendChild(this._createParagraph("Type", this._type));
+    mobFigcaptionElement.appendChild(this._createParagraph("Classification", this._type));
     mobFigcaptionElement.appendChild(this._createParagraph("Behavior", this._behavior));
     mobFigcaptionElement.appendChild(this._createParagraph("Spawn", this._spawn));
     mobFigcaptionElement.appendChild(this._createParagraph("attack type", this._attackType));
