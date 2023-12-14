@@ -12,10 +12,10 @@ const AdultZombie = new HostileMobs(
 "Light level of 0",
 "Melee",
 3,
-["Hands", "Iron Sword", "Iron Shovel"],
-["None", "Random Armor"],
+[],
+[2],
 "Zombies are common undead hostile mobs that deal melee damage",
-["Rotten Flesh"],
+[],
 ["Iron Ingot", "Carrot", "baked potato"],
 5);
 
