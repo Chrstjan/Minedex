@@ -73,18 +73,18 @@ class HostileMobs {
     const mobFigcaptionElement = document.createElement("figcaption");
 
     //Using the helper function
-    mobFigcaptionElement.appendChild(this._createParagraph("Health", this._hp, ["Heart.jpg"]));
+    mobFigcaptionElement.appendChild(this._createParagraph("Health", this._hp, ["Heart.png"]));
     mobFigcaptionElement.appendChild(this._createParagraph("Classification", this._type));
     mobFigcaptionElement.appendChild(this._createParagraph("Behavior", this._behavior));
     mobFigcaptionElement.appendChild(this._createParagraph("Spawn", this._spawn));
     mobFigcaptionElement.appendChild(this._createParagraph("attack type", this._attackType));
-    mobFigcaptionElement.appendChild(this._createParagraph("damage", this._dmg, ["Heart.jpg"]));
+    mobFigcaptionElement.appendChild(this._createParagraph("damage", this._dmg, ["Heart.png"]));
     mobFigcaptionElement.appendChild(this._createParagraph("Natural equipment", this._equipment, ["Iron_Sword.png", "Iron_Shovel.png", "Iron_Chestplate.png"]));
-    mobFigcaptionElement.appendChild(this._createParagraph("Armor", this._armor, ["Armor-icon.jpg"]));
+    mobFigcaptionElement.appendChild(this._createParagraph("Armor", this._armor, ["Armor-icon.png"]));
     mobFigcaptionElement.appendChild(this._createParagraph("Description", this._desc));
     mobFigcaptionElement.appendChild(this._createParagraph("Common Drops", this._drops, ["Rotten_Flesh.png"]));
     mobFigcaptionElement.appendChild(this._createParagraph("Rare Drops", this._rareDrops, ["Iron_Ingot.png", "Potato.png", "Carrot.png"]));
-    mobFigcaptionElement.appendChild(this._createParagraph("Experience", this._xp, ["Exp_Orb.jpg"]));
+    mobFigcaptionElement.appendChild(this._createParagraph("Experience", this._xp, ["Exp_Orb.png"]));
 
     mobFigureElement.appendChild(mobHeaderElement);
     mobFigureElement.appendChild(mobImageElement);
