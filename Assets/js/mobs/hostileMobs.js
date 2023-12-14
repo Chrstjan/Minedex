@@ -10,12 +10,14 @@ class HostileMobs {
     attack,
     damage,
     equipment,
+    armor,
     details,
     drops,
-    rareDrops
+    rareDrops,
+    exp
   ) {
     this._name = name;
-    this._img = imgPath;
+    this._img = HostileMobs.baseUrl + imgPath;
     this._hp = health;
     this._type = classType;
     this._behavior = behavior;
@@ -23,10 +25,14 @@ class HostileMobs {
     this._attackType = attack;
     this._dmg = damage;
     this._equipment = equipment;
+    this._armor = armor;
     this._desc = details;
     this._drops = drops;
     this._rareDrops = rareDrops;
+    this._xp = exp;
   }
+
+  static baseUrl = "./Assets/images/hostileMobs/"
 
   _createParagraph = (property, value) => {
     const pElement = document.createElement("p");
@@ -56,9 +62,11 @@ class HostileMobs {
     mobFigcaptionElement.appendChild(this._createParagraph("attack type", this._attackType));
     mobFigcaptionElement.appendChild(this._createParagraph("damage", this._dmg));
     mobFigcaptionElement.appendChild(this._createParagraph("equipment", this._equipment));
+    mobFigcaptionElement.appendChild(this._createParagraph("Armor", this._armor));
     mobFigcaptionElement.appendChild(this._createParagraph("Description", this._desc));
     mobFigcaptionElement.appendChild(this._createParagraph("Drops", this._drops));
     mobFigcaptionElement.appendChild(this._createParagraph("Rare Drops", this._rareDrops));
+    mobFigcaptionElement.appendChild(this._createParagraph("Experience", this._xp));
 
     mobFigureElement.appendChild(mobHeaderElement);
     mobFigureElement.appendChild(mobImageElement);
@@ -69,4 +77,9 @@ class HostileMobs {
 };
 
 //Creating the hostile mobs
-const Zombie = new HostileMobs();
+
+//Adult Zombie
+const AdultZombie = new HostileMobs("Zombie", "AdultZombie.jpg", 20, "Undead", "Hostile", "Light level of 0", "Melee", 3, ["Hands", "Iron Sword", "Iron Shovel"], ["None", "Random Armor"], "Zombies are common undead hostile mobs that deal melee damage", ["Rotten Flesh"], ["Iron Ingot", "Carrot", "baked potato"], 5);
+AdultZombie.displayMobDetails(document.getElementById("main-section"));
+
+//Baby Zombie
