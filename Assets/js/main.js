@@ -11,15 +11,15 @@ const AdultZombie = new HostileMobs(
 "Hostile",
 "Light level of 0",
 "Melee",
-3,
+1.5,
 [],
 [2],
 "Zombies are common undead hostile mobs that deal melee damage",
 [],
-["Iron Ingot", "Carrot", "baked potato"],
+[],
 5);
 
 AdultZombie.displayMobDetails(document.getElementById("main-section"));
   
-  //Baby Zombie
+//Skeleton
   

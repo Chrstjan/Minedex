@@ -83,7 +83,7 @@ class HostileMobs {
     mobFigcaptionElement.appendChild(this._createParagraph("Armor", this._armor, ["Armor-icon"]));
     mobFigcaptionElement.appendChild(this._createParagraph("Description", this._desc));
     mobFigcaptionElement.appendChild(this._createParagraph("Common Drops", this._drops, ["Rotten_Flesh"]));
-    mobFigcaptionElement.appendChild(this._createParagraph("Rare Drops", this._rareDrops));
+    mobFigcaptionElement.appendChild(this._createParagraph("Rare Drops", this._rareDrops, ["Iron_Ingot", "Potato", "Carrot"]));
     mobFigcaptionElement.appendChild(this._createParagraph("Experience", this._xp, ["Exp_Orb"]));
 
     mobFigureElement.appendChild(mobHeaderElement);
