@@ -1,3 +1,4 @@
+//Class constructor to create the hostile mobs objects
 class HostileMobs {
   constructor(
     name,
@@ -10,7 +11,8 @@ class HostileMobs {
     damage,
     equipment,
     details,
-    drops
+    drops,
+    rareDrops
   ) {
     this._name = name;
     this._img = imgPath;
@@ -23,11 +25,14 @@ class HostileMobs {
     this._equipment = equipment;
     this._desc = details;
     this._drops = drops;
+    this._rareDrops = rareDrops;
   }
 
-  getDescription() {
-    return `The ${this._name} is a ${this._type} mob that has ${this._behavior} behavior. It has ${this._hp} health and deals ${this._dmg} damage`;
-  }
+  _createParagraph = (property, value) => {
+    const pElement = document.createElement("p");
+    pElement.textContent = `${property}, ${value}`;
+    return pElement;
+  };
 
   displayMobDetails(targetElement) {
     const mobFigureElement = document.createElement("figure");
@@ -43,6 +48,25 @@ class HostileMobs {
 
     const mobFigcaptionElement = document.createElement("figcaption");
 
-    //Helper function to create p elements??
+    //Using the helper function
+    mobFigcaptionElement.appendChild(this._createParagraph("Health", this._hp));
+    mobFigcaptionElement.appendChild(this._createParagraph("Type", this._type));
+    mobFigcaptionElement.appendChild(this._createParagraph("Behavior", this._behavior));
+    mobFigcaptionElement.appendChild(this._createParagraph("Spawn", this._spawn));
+    mobFigcaptionElement.appendChild(this._createParagraph("attack type", this._attackType));
+    mobFigcaptionElement.appendChild(this._createParagraph("damage", this._dmg));
+    mobFigcaptionElement.appendChild(this._createParagraph("equipment", this._equipment));
+    mobFigcaptionElement.appendChild(this._createParagraph("Description", this._desc));
+    mobFigcaptionElement.appendChild(this._createParagraph("Drops", this._drops));
+    mobFigcaptionElement.appendChild(this._createParagraph("Rare Drops", this._rareDrops));
+
+    mobFigureElement.appendChild(mobHeaderElement);
+    mobFigureElement.appendChild(mobImageElement);
+    mobFigureElement.appendChild(mobFigcaptionElement);
+
+    targetElement.appendChild(mobFigureElement);
   }
-}
+};
+
+//Creating the hostile mobs
+const Zombie = new HostileMobs();
