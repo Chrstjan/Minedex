@@ -53,6 +53,10 @@
     border-bottom: 0;
 }
 
+.hostile-mob .mob-image {
+    height: 80vh;
+}
+
 .mob-modal {
     border: 2px solid #3A3A3A;
     display: flex;

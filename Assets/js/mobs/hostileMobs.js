@@ -107,6 +107,7 @@ class HostileMobs {
     const mobImageElement = document.createElement("img");
     mobImageElement.src = this._img;
     mobImageElement.alt = this._name;
+    mobImageElement.classList.add("mob-image");
 
     mobImageElement.addEventListener("click", () => {
       targetElement.classList.add("modal-blur");
