@@ -35,6 +35,36 @@ class HostileMobs {
   static hostileMobSBaseUrl = "./Assets/images/Mobs/HostileMobs/";
   static miscBaseUrl = "./Assets/images/misc/Icons/";
 
+  _createHeader = (variants) => {
+    const mobHeaderElement = document.createElement("header");
+
+    const mobNameElement = document.createElement("h2");
+    mobNameElement.textContent = this._name;
+    mobHeaderElement.appendChild(mobNameElement);
+
+    const variantsList = document.createElement("ul");
+
+    if (Array.isArray(variants) && variants.length > 0) {
+      variantsList.classList.add("variants-list");
+
+      variants.forEach((variant) => {
+        const variantsListElement = document.createElement("li");
+
+        const variantElement = document.createElement("a");
+        variantElement.textContent = variant;
+
+        variantsListElement.appendChild(variantElement);
+        variantsList.appendChild(variantsListElement);
+      });
+    }
+
+    if (variantsList) {
+      mobHeaderElement.appendChild(variantsList);
+    }
+
+    return mobHeaderElement;
+  }
+
   _createParagraph = (property, value, iconTypes) => {
     const pElement = document.createElement("p");
     pElement.textContent = `${property}: ${value}`;
@@ -61,10 +91,7 @@ class HostileMobs {
     const mobFigureElement = document.createElement("figure");
     mobFigureElement.classList.add("hostile-mob");
 
-    const mobHeaderElement = document.createElement("header");
-    const mobNameElement = document.createElement("h2");
-    mobNameElement.textContent = this._name;
-    mobHeaderElement.appendChild(mobNameElement);
+    mobFigureElement.appendChild(this._createHeader(["Adult Zombie ", "Baby Zombie"]));
 
     const mobImageElement = document.createElement("img");
     mobImageElement.src = this._img;
@@ -72,7 +99,7 @@ class HostileMobs {
 
     const mobFigcaptionElement = document.createElement("figcaption");
 
-    //Using the helper function
+    //Paragraph helper function
     mobFigcaptionElement.appendChild(this._createParagraph("Health", this._hp, ["Heart.png"]));
     mobFigcaptionElement.appendChild(this._createParagraph("Classification", this._type));
     mobFigcaptionElement.appendChild(this._createParagraph("Behavior", this._behavior));
@@ -86,7 +113,6 @@ class HostileMobs {
     mobFigcaptionElement.appendChild(this._createParagraph("Rare Drops", this._rareDrops, ["Iron_Ingot.png", "Potato.png", "Carrot.png"]));
     mobFigcaptionElement.appendChild(this._createParagraph("Experience", this._xp, ["Exp_Orb.png"]));
 
-    mobFigureElement.appendChild(mobHeaderElement);
     mobFigureElement.appendChild(mobImageElement);
     mobFigureElement.appendChild(mobFigcaptionElement);
 
