@@ -97,6 +97,23 @@ class HostileMobs {
     mobImageElement.src = this._img;
     mobImageElement.alt = this._name;
 
+    mobImageElement.addEventListener("click", () => {
+      targetElement.classList.add("modal-blur");
+      const mobModalFigure = document.createElement("figure");
+      mobModalFigure.classList.add("mob-modal");
+
+      const mobModalImage = document.createElement("img");
+      mobModalImage.src = this._img;
+
+      mobModalFigure.appendChild(mobModalImage);
+      document.body.appendChild(mobModalFigure);
+
+      mobModalFigure.addEventListener("click", () => {
+        targetElement.classList.remove("modal-blur");
+        mobModalFigure.remove();
+      });
+    });
+
     const mobFigcaptionElement = document.createElement("figcaption");
 
     //Paragraph helper function

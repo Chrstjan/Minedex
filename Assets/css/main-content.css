@@ -1,3 +1,7 @@
+.modal-blur:not(.mob-modal) {
+    filter: blur(20px);
+}
+
 .main-section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -47,6 +51,25 @@
 .variants-list li a:hover {
     color: #000;
     border-bottom: 0;
+}
+
+.mob-modal {
+    border: 2px solid #3A3A3A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    width: 87vw;
+    background: #3A3A3A;
+}
+
+.mob-modal img {
+    height: 80vh;
 }
 
 .hostile-mob figcaption p {
