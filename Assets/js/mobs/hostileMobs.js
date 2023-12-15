@@ -6,7 +6,6 @@ class HostileMobs {
     health,
     classType,
     behavior,
-    hasVariants = false,
     spawn,
     attack,
     damage,
@@ -22,7 +21,6 @@ class HostileMobs {
     this._hp = health;
     this._type = classType;
     this._behavior = behavior;
-    this._variants = hasVariants;
     this._spawn = spawn;
     this._attackType = attack;
     this._dmg = damage;
@@ -44,11 +42,9 @@ class HostileMobs {
     mobNameElement.textContent = this._name;
     mobHeaderElement.appendChild(mobNameElement);
 
-    if (this._variants) {
-      const variantsList = document.createElement("ul");
-      variantsList.classList.add("variants-list");
-    }
-  
+    const variantsList = document.createElement("ul");
+    variantsList.classList.add("variants-list");
+
     if (Array.isArray(variants) && variants.length > 0) {
 
       variants.forEach((variant) => {
