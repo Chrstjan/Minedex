@@ -43,9 +43,9 @@ class HostileMobs {
     mobHeaderElement.appendChild(mobNameElement);
 
     const variantsList = document.createElement("ul");
+    variantsList.classList.add("variants-list");
 
     if (Array.isArray(variants) && variants.length > 0) {
-      variantsList.classList.add("variants-list");
 
       variants.forEach((variant) => {
         const variantsListElement = document.createElement("li");
