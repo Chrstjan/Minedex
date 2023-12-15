@@ -35,7 +35,7 @@ class HostileMobs {
   static hostileMobSBaseUrl = "./Assets/images/Mobs/HostileMobs/";
   static miscBaseUrl = "./Assets/images/misc/Icons/";
 
-  _createHeader = (variants) => {
+  _createHeader = (variants, targetElement) => {
     const mobHeaderElement = document.createElement("header");
 
     const mobNameElement = document.createElement("h2");
@@ -52,6 +52,17 @@ class HostileMobs {
 
         const variantElement = document.createElement("a");
         variantElement.textContent = variant;
+
+        variantElement.addEventListener("click", () => {
+          const formattedVariant = variant.replace(/\s+/g, '').toLowerCase();
+          this._img = HostileMobs.hostileMobSBaseUrl + formattedVariant + ".jpg";
+
+          while (targetElement.firstChild) {
+            targetElement.removeChild(targetElement.firstChild);
+          }
+
+          this.displayMobDetails(targetElement);
+        })
 
         variantsListElement.appendChild(variantElement);
         variantsList.appendChild(variantsListElement);
@@ -91,7 +102,7 @@ class HostileMobs {
     const mobFigureElement = document.createElement("figure");
     mobFigureElement.classList.add("hostile-mob");
 
-    mobFigureElement.appendChild(this._createHeader(["Adult Zombie ", "Baby Zombie"]));
+    mobFigureElement.appendChild(this._createHeader(["Adult Zombie ", "Baby Zombie"], targetElement));
 
     const mobImageElement = document.createElement("img");
     mobImageElement.src = this._img;
